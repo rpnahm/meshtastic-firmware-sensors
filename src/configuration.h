@@ -241,6 +241,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define BQ27220_ADDR 0x55 // same address as TDECK_KB
 #define BQ25896_ADDR 0x6B
 #define LTR553ALS_ADDR 0x23
+#define ADA4026_ADDR 0x39 // Both jumpers must be bridged
 
 // -----------------------------------------------------------------------------
 // ACCELEROMETER

@@ -138,6 +138,10 @@ extern void drawCommonHeader(OLEDDisplay *display, int16_t x, int16_t y, const c
 #include "Sensor/BH1750Sensor.h"
 #endif
 
+#if __has_include(<ADAfruit_seesaw.h>)
+#include "Sensor/ADA4026Sensor.h"
+#endif
+
 #define FAILED_STATE_SENSOR_READ_MULTIPLIER 10
 #define DISPLAY_RECEIVEID_MEASUREMENTS_ON_SCREEN true
 
@@ -242,7 +246,8 @@ void EnvironmentTelemetryModule::i2cScanFinished(ScanI2C *i2cScanner)
 #if __has_include(<BH1750_WE.h>)
     addSensor<BH1750Sensor>(i2cScanner, ScanI2C::DeviceType::BH1750);
 #endif
-
+#if __has_include(<ADAfruit_seesaw.h>)
+    addSensor<TSL2561Sensor>(i2cScanner, ScanI2C::DeviceType::ADA4026);
 #endif
 }
 
